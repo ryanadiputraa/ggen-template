@@ -19,5 +19,13 @@ jobs:
       - name: Zip repository
         run: zip -r ggen-template@${{ github.ref_name }}.zip .
 
-      - name: Show zipped file
-        run: ls -lh
+      - name: Show zip file size
+        run: |
+          FILE="ggen-template@${{ env.ref_name }}.zip"
+          if [ -f "$FILE" ]; then
+            SIZE=$(stat -c%s "$FILE")
+            echo "Filename: $FILE"
+            echo "Size: $SIZE bytes"
+          else
+            echo "File $FILE does not exist"
+          fi
