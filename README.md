@@ -1,4 +1,4 @@
-# <ggen-tempalate>
+# <ggen-template>
 
 Project generated using [ggen](https://github.com/ryanadiputraa/ggen)
 
